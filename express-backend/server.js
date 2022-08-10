@@ -25,7 +25,7 @@ app.use('/api/user', userRoutes)
 
 // connect to MongoDB cluster
 
-mongoose.connect(process.env.MONGO_URI)
+mongoose.connect(process.env.PORT || 4000)
 .then(() => {
     // listen for requests
     app.listen(process.env.PORT, () => {
