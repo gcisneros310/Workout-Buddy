@@ -31,13 +31,11 @@ if(process.env.PORT){
     console.log(port)
 }
 
-if(process.env.NODE_ENV === 'production') {
-    app.use(express.static('frontend/build'))
-}
+
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
     // listen for requests
-    app.listen(port, () => {
+    app.listen((process.env.PORT || 4000), () => {
         console.log('connected to DB and listening on PORT', port)    
     })
 })

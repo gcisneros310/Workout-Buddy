@@ -1,2 +1,2 @@
-web: node frontend/src/App.js
-api: node server.js
+web:node frontend/src/App.js
+api:node server.js
