@@ -2,8 +2,13 @@
   "name": "exercise-tracker",
   "version": "1.0.0",
   "description": "Workout Buddy is a simple application for users to log their exercises on a website!",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "build": "cd frontend && npm run build",
+    "install-client": "cd frontend && npm install",
+    "start" : "cd express-backend && node server.js",
+    "client": "cd frontend && npm start",
+
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
