@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Workout Buddy is a simple application for users to log their exercises on a website!",
   "main": "server.js",
+  "engines": {
+    "node": "16.15.1"
+  },
   "scripts": {
     "build": "cd frontend && npm run build",
     "install-client": "cd frontend && npm install",
