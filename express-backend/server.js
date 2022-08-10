@@ -1,5 +1,7 @@
 require('dotenv').config()
 
+port = process.env.PORT || 4000
+
 const express = require('express')
 
 const mongoose = require('mongoose')
@@ -25,11 +27,14 @@ app.use('/api/user', userRoutes)
 
 // connect to MongoDB cluster
 
-mongoose.connect(process.env.PORT || 4000)
+if(process.env.PORT){
+    console.log(port)
+}
+mongoose.connect(process.env.MONGO_URI)
 .then(() => {
     // listen for requests
-    app.listen(process.env.PORT, () => {
-        console.log('connected to DB and listening on PORT', process.env.PORT)    
+    app.listen(port, () => {
+        console.log('connected to DB and listening on PORT', port)    
     })
 })
 .catch((error) => { // catch error in case of bad authentication / failed authentication
