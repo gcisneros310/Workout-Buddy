@@ -8,7 +8,7 @@ const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
 const userRoutes = require('./routes/user')
  
-
+const host = '0.0.0.0'
 // instantiate express
 const app = express()
 
@@ -35,7 +35,7 @@ if(process.env.PORT){
 mongoose.connect(process.env.MONGO_URI)
 .then(() => {
     // listen for requests
-    app.listen((process.env.PORT || 4000), () => {
+    app.listen((process.env.PORT || 4000), host, () => {
         console.log('connected to DB and listening on PORT', port)    
     })
 })
